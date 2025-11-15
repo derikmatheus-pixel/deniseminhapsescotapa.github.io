@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Para você 💛</title>
+
+    <style>
+        body {
+            background-color: #111;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 80px;
+            overflow: hidden;
+        }
+
+        h1 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            position: relative;
+            padding: 15px 30px;
+            margin: 10px;
+            font-size: 18px;
+            border-radius: 8px;
+            cursor: pointer;
+            border: none;
+            font-weight: bold;
+        }
+
+        .yes {
+            background-color: #25D366;
+            color: #111;
+        }
+
+        .no {
+            background-color: #ff3b30;
+            color: #fff;
+            position: absolute;
+        }
+
+        #resposta {
+            margin-top: 40px;
+            font-size: 24px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Denise, Você me ama? 💛</h1>
+
+    <button class="btn yes" onclick="pergunta2()">SIM</button>
+    <button class="btn no" id="btnNo" onclick="fugir()">NÃO</button>
+
+    <div id="resposta"></div>
+
+    <script>
+        function fugir() {
+            const botao = document.getElementById("btnNo");
+
+            const largura = window.innerWidth - 150;
+            const altura = window.innerHeight - 80;
+
+            const novoX = Math.random() * largura;
+            const novoY = Math.random() * altura;
+
+            botao.style.left = novoX + "px";
+            botao.style.top = novoY + "px";
+        }
+
+        function pergunta2() {
+            const resposta = document.getElementById("resposta");
+            resposta.innerHTML = "De verdade? 🥺";
+
+            setTimeout(() => {
+                resposta.innerHTML = "Eu sabia! 💛";
+                resposta.style.color = "#25D366";
+            }, 1500);
+        }
+    </script>
+
+</body>
+</html>
